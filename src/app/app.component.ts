@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +9,11 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 export class AppComponent {
   title = 'OLPProject';
 
-	active = 1;
+  constructor(private modalService: NgbModal) {
+  }
+
+  public open(modal: any): void {
+    this.modalService.open(modal);
+  }
 
 }
